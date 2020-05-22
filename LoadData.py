@@ -11,12 +11,12 @@ def load_data():
     # Load data
     data = pd.read_csv('price.data', sep=",", header=None)
     data.columns = ['symbol', 'normalized loss', 'wheel base', 'length', 'width', 'height', 'curb weight',
-                    'engine size', 'bore', 'stroke', 'compression ratio', 'horespower', 'peak rpm',
+                    'engine size', 'bore', 'stroke', 'compression ratio', 'horsepower', 'peak rpm',
                     'city mpg', 'highway mpg', 'price']
 
     # Normalize data
     data = data.to_numpy()
-    data[:, 1:] = (data[:, 1:] - data[:, :1].mean())/data[:, :1].std()
+    #data[:, 1:] = (data[:, 1:] - data[:, :1].mean())/data[:, :1].std()
     data = pd.DataFrame(data)
     return data
 

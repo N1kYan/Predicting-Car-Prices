@@ -17,12 +17,12 @@ def ista_regression():
     Y = data[:, -1].reshape((-1, 1))
 
     # Initial guess
-    w_k = np.ones((X.shape[1], 1))
+    w_k = np.random.rand(X.shape[1], 1)
 
     # Algorithm parameters
-    eta = 0.5
-    t_k = 0.9
-    lamb = 0.5
+    eta = 0.8
+    t_k = 0.05
+    lamb = 0.8
     max_iter = 100
 
     errors = []
@@ -58,7 +58,7 @@ def ista_regression():
 
         w_k = w_next
         errors.append(objective(X, Y, w_k, lamb)[0])
-        print(f"Iteration {k} error {errors[-1]}")
+        print(f"Iteration {k} Error {errors[-1]}")
     return w_k, errors
 
 
