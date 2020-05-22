@@ -13,7 +13,6 @@ def load_data():
     data.columns = ['symbol', 'normalized loss', 'wheel base', 'length', 'width', 'height', 'curb weight',
                     'engine size', 'bore', 'stroke', 'compression ratio', 'horespower', 'peak rpm',
                     'city mpg', 'highway mpg', 'price']
-    print(f"Loaded {data.shape} data set.")
 
     # Normalize data
     data = data.to_numpy()
