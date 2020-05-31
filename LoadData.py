@@ -16,7 +16,9 @@ def load_data():
 
     # Normalize data
     data = data.to_numpy()
-    #data[:, 1:] = (data[:, 1:] - data[:, :1].mean())/data[:, :1].std()
+    # Normalize price
+    data[:, -1] = data[:, -1]/max([data[:, -1]])
+    print(f"Read-In {data.shape} dataset")
     data = pd.DataFrame(data)
     return data
 
